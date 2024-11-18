@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Prog_Lista_Cartas</string>
     <string name="TITULO">POKEMETA CARDS</string>
+    <string name="AGUA">AGUA</string>
+    <string name="FUEGO">FUEGO</string>
+    <string name="ELECTRICO">ELECTRICO</string>
+    <string name="SINIESTRO">SINIESTRO</string>
+    <string name="HADA">HADA</string>
+    <string name="PSIQUICO">PSIQUICO</string>
+    <string name="LUCHA">LUCHA</string>
+    <string name="NORMAL">NORMAL</string>
+    <string name="TIERRA">TIERRA</string>
+    <string name="ACERO">ACERO</string>
+    <string name="PLANTA">PLANTA</string>
 </resources>

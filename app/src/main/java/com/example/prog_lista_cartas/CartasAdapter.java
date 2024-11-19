@@ -2,7 +2,6 @@ package com.example.prog_lista_cartas;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Switch;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,8 +11,9 @@ import java.util.ArrayList;
 
         private ArrayList<Cartas> listaCartas;
 
-
-
+        public CartasAdapter(ArrayList<Cartas> listaCartas, MainActivity mainActivity) {
+            this.listaCartas = listaCartas;
+        }
 
         @NonNull
         @Override

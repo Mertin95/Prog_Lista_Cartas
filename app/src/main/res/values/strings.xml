@@ -12,4 +12,6 @@
     <string name="TIERRA">TIERRA</string>
     <string name="ACERO">ACERO</string>
     <string name="PLANTA">PLANTA</string>
+    <string name="MOSTRAR">mostrar\n</string>
+    <string name="mostrar">mostrar</string>
 </resources>

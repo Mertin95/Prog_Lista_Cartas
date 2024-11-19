@@ -45,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
         listaCartas.add(new Cartas("Charmander", "Fuego"));
         listaCartas.add(new Cartas("Bulbasur", "Agua"));
 
-        ListView listView = findViewById(R.id.recyclerView);
 
         CartasAdapter adaptador = new CartasAdapter (listaCartas,this);
-        listView.setAdapter((ListAdapter) adaptador);
+        recyclerView.setAdapter(adaptador);
 
 
 

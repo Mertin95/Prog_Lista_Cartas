@@ -6,14 +6,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-    public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasViewHolder> {
+public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasViewHolder> {
 
         private ArrayList<Cartas> listaCartas;
+        private HashMap<String,Boolean> filtros;
 
-        public CartasAdapter(ArrayList<Cartas> listaCartas, MainActivity mainActivity) {
+
+    public CartasAdapter(ArrayList<Cartas> listaCartas, HashMap<String, Boolean> filtros, MainActivity mainActivity) {
             this.listaCartas = listaCartas;
-        }
+            this.filtros = filtros;
+    }
 
         @NonNull
         @Override
@@ -25,6 +29,18 @@ import java.util.ArrayList;
         @Override
         public void onBindViewHolder(@NonNull CartasViewHolder holder, int position) {
             Cartas carta = listaCartas.get(position);
+
+            Boolean electrico = filtros.get("Eléctrico");
+            Boolean fuego = filtros.get("Fuego");
+            Boolean planta = filtros.get("Planta");
+            Boolean lucha = filtros.get("Lucha");
+            Boolean tierra = filtros.get("Tierra");
+            Boolean siniestro = filtros.get("Siniestro");
+            Boolean psíquico = filtros.get("Psíquico");
+            Boolean agua = filtros.get("Agua");
+            Boolean acero = filtros.get("Acero");
+            Boolean normal = filtros.get("Normal");
+
             holder.nombreTextView.setText(carta.getNombre());
             holder.tipoTextView.setText(carta.getTipo());
 

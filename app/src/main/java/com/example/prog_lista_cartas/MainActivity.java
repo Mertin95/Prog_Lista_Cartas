@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         listaacero.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Acero",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         listaelectrico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Eléctrico",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         listafuego.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Fuego",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         listalucha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Lucha",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         listanormal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Normal",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         listapsiquico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Psíquico",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
         listasiniestro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Siniestro",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
         listatierra.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Tierra",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
         listaplanta.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
+                filtros.put("Planta",b);
                 CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 

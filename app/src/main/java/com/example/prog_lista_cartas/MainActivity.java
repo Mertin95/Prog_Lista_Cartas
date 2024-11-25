@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -23,7 +25,16 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Cartas> listaCartas;
     HashMap<String,Boolean> filtros;
-
+    private Switch listaagua;
+    private Switch listaacero;
+    private Switch listaelectrico;
+    private Switch listafuego;
+    private Switch listalucha;
+    private Switch listanormal;
+    private Switch listapsiquico;
+    private Switch listasiniestro;
+    private Switch listatierra;
+    private Switch listaplanta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -45,15 +55,16 @@ public class MainActivity extends AppCompatActivity {
         // diccionario de filtros
         filtros = new HashMap<>();
         filtros.put("Eléctrico",false);
-        filtros.put("Fuego",true);
-        filtros.put("Planta",true);
-        filtros.put("Lucha",true);
-        filtros.put("Tierra",true);
-        filtros.put("Siniestro",true);
-        filtros.put("Psíquico",true);
-        filtros.put("Agua",true);
-        filtros.put("Acero",true);
-        filtros.put("Normal",true);
+        filtros.put("Fuego",false);
+        filtros.put("Planta",false);
+        filtros.put("Lucha",false);
+        filtros.put("Tierra",false);
+        filtros.put("Siniestro",false);
+        filtros.put("Psíquico",false);
+        filtros.put("Agua",false);
+        filtros.put("Acero",false);
+        filtros.put("Normal",false);
+
 
 
         listaCartas = new ArrayList<>();
@@ -131,6 +142,118 @@ public class MainActivity extends AppCompatActivity {
 
         CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,this);
         recyclerView.setAdapter(adaptador);
+
+        //switch
+
+        listaagua = findViewById(R.id.listaagua);
+        listaagua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listaacero = findViewById(R.id.listaacero);
+        listaacero.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listaelectrico = findViewById(R.id.listaelectrico);
+        listaelectrico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listafuego = findViewById(R.id.listafuego);
+        listafuego.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listalucha = findViewById(R.id.listalucha);
+        listalucha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listanormal = findViewById(R.id.listanormal);
+        listanormal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listapsiquico = findViewById(R.id.listapsiquico);
+        listapsiquico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listasiniestro = findViewById(R.id.listasiniestro);
+        listasiniestro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listatierra = findViewById(R.id.listatierra);
+        listatierra.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
+
+        listaplanta = findViewById(R.id.listaplanta);
+        listaplanta.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                filtros.put("Agua",b);
+                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                recyclerView.setAdapter(adaptador);
+
+            }
+        });
 
 
 

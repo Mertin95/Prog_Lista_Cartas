@@ -15,7 +15,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
 
 
     public CartasAdapter(ArrayList<Cartas> listaCartas, HashMap<String, Boolean> filtros, MainActivity mainActivity) {
-        listaCartas = new ArrayList<>();
+        this.listaCartas = new ArrayList<>();
 
         for (int i = 0; i < listaCartas.size(); i++) {
             if (filtros.get(listaCartas.get(i).getTipo()) == true){
@@ -43,7 +43,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
 
         @Override
         public int getItemCount() {
-            return listaCartas.size();
+            return this.listaCartas.size();
         }
 
 

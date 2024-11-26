@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Agua
             listaCartas.add(new Cartas("Squirtle", "Agua"));
+
             listaCartas.add(new Cartas("Psyduck", "Agua"));
             listaCartas.add(new Cartas("Vaporeon", "Agua"));
             listaCartas.add(new Cartas("Lapras", "Agua"));

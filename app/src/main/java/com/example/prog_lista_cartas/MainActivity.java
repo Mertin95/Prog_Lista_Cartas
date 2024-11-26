@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -52,6 +54,39 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
+        //mensaje que figura como actualizacion de la lista de cartas
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"La lista se actualizo en 26/11/2024",Toast.LENGTH_LONG).show();
+
+            }
+        };
+
+        //asociando los botones al listener
+        ImageButton boton = findViewById(R.id.Btagua);
+        boton.setOnClickListener(listener);
+        ImageButton boton2 = findViewById(R.id.Btacero);
+        boton.setOnClickListener(listener);
+        ImageButton boton3 = findViewById(R.id.Btelectrico);
+        boton.setOnClickListener(listener);
+        ImageButton boton4 = findViewById(R.id.Btfuego);
+        boton.setOnClickListener(listener);
+        ImageButton boton5 = findViewById(R.id.Btlucha);
+        boton.setOnClickListener(listener);
+        ImageButton boton6 = findViewById(R.id.Btnormal);
+        boton.setOnClickListener(listener);
+        ImageButton boton7 = findViewById(R.id.Btplanta);
+        boton.setOnClickListener(listener);
+        ImageButton boton8 = findViewById(R.id.Btpsiquico);
+        boton.setOnClickListener(listener);
+        ImageButton boton9 = findViewById(R.id.Btsiniestro);
+        boton.setOnClickListener(listener);
+        ImageButton boton10 = findViewById(R.id.Bttierra);
+        boton.setOnClickListener(listener);
+
+
+
         // diccionario de filtros
         filtros = new HashMap<>();
         filtros.put("Eléctrico",false);
@@ -66,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         filtros.put("Normal",false);
 
 
-
+        //array donde se almacenan las cartas
         listaCartas = new ArrayList<>();
 
         // Eléctrico
@@ -143,8 +178,7 @@ public class MainActivity extends AppCompatActivity {
         CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,this);
         recyclerView.setAdapter(adaptador);
 
-        //switch
-
+        //switch , asociando los filtros de tipo de carta para que figure al pulsar el switch segun el tipo
         listaagua = findViewById(R.id.listaagua);
         listaagua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -254,6 +288,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
 
 

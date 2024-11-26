@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Prog_Lista_Cartas</string>
+    <string name="TITULO">POKEMETA CARDS</string>
+    <string name="AGUA">AUGA</string>
+    <string name="FUEGO">LUME</string>
+    <string name="ELECTRICO">ELECTRICO</string>
+    <string name="SINIESTRO">SINISTRO</string>
+    <string name="HADA">FADA</string>
+    <string name="PSIQUICO">PSIQUICO</string>
+    <string name="LUCHA">LOITA</string>
+    <string name="NORMAL">NORMAL</string>
+    <string name="TIERRA">TERRA</string>
+    <string name="ACERO">ACEIRO</string>
+    <string name="PLANTA">PLANTA</string>
+    <string name="MOSTRAR">AMOSAR</string>
+    <string name="mostrar">amosar</string>
+</resources>

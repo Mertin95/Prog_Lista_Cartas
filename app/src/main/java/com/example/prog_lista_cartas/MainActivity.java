@@ -1,6 +1,7 @@
 package com.example.prog_lista_cartas;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -66,24 +67,33 @@ public class MainActivity extends AppCompatActivity {
         //asociando los botones al listener
         ImageButton boton = findViewById(R.id.Btagua);
         boton.setOnClickListener(listener);
+
         ImageButton boton2 = findViewById(R.id.Btacero);
-        boton.setOnClickListener(listener);
+        boton2.setOnClickListener(listener);
+
         ImageButton boton3 = findViewById(R.id.Btelectrico);
-        boton.setOnClickListener(listener);
+        boton3.setOnClickListener(listener);
+
         ImageButton boton4 = findViewById(R.id.Btfuego);
-        boton.setOnClickListener(listener);
+        boton4.setOnClickListener(listener);
+
         ImageButton boton5 = findViewById(R.id.Btlucha);
-        boton.setOnClickListener(listener);
+        boton5.setOnClickListener(listener);
+
         ImageButton boton6 = findViewById(R.id.Btnormal);
-        boton.setOnClickListener(listener);
+        boton6.setOnClickListener(listener);
+
         ImageButton boton7 = findViewById(R.id.Btplanta);
-        boton.setOnClickListener(listener);
+        boton7.setOnClickListener(listener);
+
         ImageButton boton8 = findViewById(R.id.Btpsiquico);
-        boton.setOnClickListener(listener);
+        boton8.setOnClickListener(listener);
+
         ImageButton boton9 = findViewById(R.id.Btsiniestro);
-        boton.setOnClickListener(listener);
+        boton9.setOnClickListener(listener);
+
         ImageButton boton10 = findViewById(R.id.Bttierra);
-        boton.setOnClickListener(listener);
+        boton10.setOnClickListener(listener);
 
 
 
@@ -103,77 +113,80 @@ public class MainActivity extends AppCompatActivity {
 
         //array donde se almacenan las cartas
         listaCartas = new ArrayList<>();
+        try {
+            // Eléctrico
+            listaCartas.add(new Cartas("Pikachu", "Eléctrico"));
+            listaCartas.add(new Cartas("Electabuzz", "Eléctrico"));
+            listaCartas.add(new Cartas("Raichu", "Eléctrico"));
+            listaCartas.add(new Cartas("Jolteon", "Eléctrico"));
+            listaCartas.add(new Cartas("Magnezone", "Eléctrico"));
 
-        // Eléctrico
-        listaCartas.add(new Cartas("Pikachu", "Eléctrico"));
-        listaCartas.add(new Cartas("Electabuzz", "Eléctrico"));
-        listaCartas.add(new Cartas("Raichu", "Eléctrico"));
-        listaCartas.add(new Cartas("Jolteon", "Eléctrico"));
-        listaCartas.add(new Cartas("Magnezone", "Eléctrico"));
+            // Fuego
+            listaCartas.add(new Cartas("Charmander", "Fuego"));
+            listaCartas.add(new Cartas("Vulpix", "Fuego"));
+            listaCartas.add(new Cartas("Growlithe", "Fuego"));
+            listaCartas.add(new Cartas("Flareon", "Fuego"));
+            listaCartas.add(new Cartas("Arcanine", "Fuego"));
 
-        // Fuego
-        listaCartas.add(new Cartas("Charmander", "Fuego"));
-        listaCartas.add(new Cartas("Vulpix", "Fuego"));
-        listaCartas.add(new Cartas("Growlithe", "Fuego"));
-        listaCartas.add(new Cartas("Flareon", "Fuego"));
-        listaCartas.add(new Cartas("Arcanine", "Fuego"));
+            // Planta
+            listaCartas.add(new Cartas("Bulbasaur", "Planta"));
+            listaCartas.add(new Cartas("Oddish", "Planta"));
+            listaCartas.add(new Cartas("Chikorita", "Planta"));
+            listaCartas.add(new Cartas("Leafeon", "Planta"));
+            listaCartas.add(new Cartas("Roserade", "Planta"));
 
-        // Planta
-        listaCartas.add(new Cartas("Bulbasaur", "Planta"));
-        listaCartas.add(new Cartas("Oddish", "Planta"));
-        listaCartas.add(new Cartas("Chikorita", "Planta"));
-        listaCartas.add(new Cartas("Leafeon", "Planta"));
-        listaCartas.add(new Cartas("Roserade", "Planta"));
+            // Lucha
+            listaCartas.add(new Cartas("Machop", "Lucha"));
+            listaCartas.add(new Cartas("Hitmonlee", "Lucha"));
+            listaCartas.add(new Cartas("Hitmonchan", "Lucha"));
+            listaCartas.add(new Cartas("Lucario", "Lucha"));
+            listaCartas.add(new Cartas("Conkeldurr", "Lucha"));
 
-        // Lucha
-        listaCartas.add(new Cartas("Machop", "Lucha"));
-        listaCartas.add(new Cartas("Hitmonlee", "Lucha"));
-        listaCartas.add(new Cartas("Hitmonchan", "Lucha"));
-        listaCartas.add(new Cartas("Lucario", "Lucha"));
-        listaCartas.add(new Cartas("Conkeldurr", "Lucha"));
+            // Tierra
+            listaCartas.add(new Cartas("Sandshrew", "Tierra"));
+            listaCartas.add(new Cartas("Cubone", "Tierra"));
+            listaCartas.add(new Cartas("Diglett", "Tierra"));
+            listaCartas.add(new Cartas("Groudon", "Tierra"));
+            listaCartas.add(new Cartas("Mudbray", "Tierra"));
 
-        // Tierra
-        listaCartas.add(new Cartas("Sandshrew", "Tierra"));
-        listaCartas.add(new Cartas("Cubone", "Tierra"));
-        listaCartas.add(new Cartas("Diglett", "Tierra"));
-        listaCartas.add(new Cartas("Groudon", "Tierra"));
-        listaCartas.add(new Cartas("Mudbray", "Tierra"));
+            // Siniestro
+            listaCartas.add(new Cartas("Umbreon", "Siniestro"));
+            listaCartas.add(new Cartas("Houndour", "Siniestro"));
+            listaCartas.add(new Cartas("Sneasel", "Siniestro"));
+            listaCartas.add(new Cartas("Zoroark", "Siniestro"));
+            listaCartas.add(new Cartas("Honchkrow", "Siniestro"));
 
-        // Siniestro
-        listaCartas.add(new Cartas("Umbreon", "Siniestro"));
-        listaCartas.add(new Cartas("Houndour", "Siniestro"));
-        listaCartas.add(new Cartas("Sneasel", "Siniestro"));
-        listaCartas.add(new Cartas("Zoroark", "Siniestro"));
-        listaCartas.add(new Cartas("Honchkrow", "Siniestro"));
+            // Psíquico
+            listaCartas.add(new Cartas("Abra", "Psíquico"));
+            listaCartas.add(new Cartas("Espeon", "Psíquico"));
+            listaCartas.add(new Cartas("Mewtwo", "Psíquico"));
+            listaCartas.add(new Cartas("Gardevoir", "Psíquico"));
+            listaCartas.add(new Cartas("Metagross", "Psíquico"));
 
-        // Psíquico
-        listaCartas.add(new Cartas("Abra", "Psíquico"));
-        listaCartas.add(new Cartas("Espeon", "Psíquico"));
-        listaCartas.add(new Cartas("Mewtwo", "Psíquico"));
-        listaCartas.add(new Cartas("Gardevoir", "Psíquico"));
-        listaCartas.add(new Cartas("Metagross", "Psíquico"));
+            // Agua
+            listaCartas.add(new Cartas("Squirtle", "Agua"));
+            listaCartas.add(new Cartas("Psyduck", "Agua"));
+            listaCartas.add(new Cartas("Vaporeon", "Agua"));
+            listaCartas.add(new Cartas("Lapras", "Agua"));
+            listaCartas.add(new Cartas("Gyarados", "Agua"));
 
-        // Agua
-        listaCartas.add(new Cartas("Squirtle", "Agua"));
-        listaCartas.add(new Cartas("Psyduck", "Agua"));
-        listaCartas.add(new Cartas("Vaporeon", "Agua"));
-        listaCartas.add(new Cartas("Lapras", "Agua"));
-        listaCartas.add(new Cartas("Gyarados", "Agua"));
+            // Acero
+            listaCartas.add(new Cartas("Magnemite", "Acero"));
+            listaCartas.add(new Cartas("Steelix", "Acero"));
+            listaCartas.add(new Cartas("Skarmory", "Acero"));
+            listaCartas.add(new Cartas("Metang", "Acero"));
+            listaCartas.add(new Cartas("Bisharp", "Acero"));
 
-        // Acero
-        listaCartas.add(new Cartas("Magnemite", "Acero"));
-        listaCartas.add(new Cartas("Steelix", "Acero"));
-        listaCartas.add(new Cartas("Skarmory", "Acero"));
-        listaCartas.add(new Cartas("Metang", "Acero"));
-        listaCartas.add(new Cartas("Bisharp", "Acero"));
+            // Normal
+            listaCartas.add(new Cartas("Eevee", "Normal"));
+            listaCartas.add(new Cartas("Snorlax", "Normal"));
+            listaCartas.add(new Cartas("Pidgey", "Normal"));
+            listaCartas.add(new Cartas("Meowth", "Normal"));
+            listaCartas.add(new Cartas("Rattata", "Normal"));
 
-        // Normal
-        listaCartas.add(new Cartas("Eevee", "Normal"));
-        listaCartas.add(new Cartas("Snorlax", "Normal"));
-        listaCartas.add(new Cartas("Pidgey", "Normal"));
-        listaCartas.add(new Cartas("Meowth", "Normal"));
-        listaCartas.add(new Cartas("Rattata", "Normal"));
-
+            }catch (NullPointerException | IllegalArgumentException e) {
+            Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
+            }
 
         CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,this);
         recyclerView.setAdapter(adaptador);

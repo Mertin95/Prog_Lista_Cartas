@@ -1,5 +1,6 @@
 package com.example.prog_lista_cartas;
 
+//modelo de las cartas que guardaremos en la aplicacion
 public class Cartas {
     private String nombre;
     private String tipo;

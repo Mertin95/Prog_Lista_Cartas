@@ -8,15 +8,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// Adaptador personalizado para RecyclerView que muestra una lista de objetos Cartas
 public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasViewHolder> {
-
+         // Lista de cartas que se mostrarán en el RecyclerView (ya filtradas)
         private ArrayList<Cartas> listaCartas;
+        // Mapa que contiene los filtros aplicados (clave: tipo de carta, valor: si debe incluirse o no)
         private HashMap<String,Boolean> filtros;
 
 
     public CartasAdapter(ArrayList<Cartas> listaCartas, HashMap<String, Boolean> filtros, MainActivity mainActivity) {
         this.listaCartas = new ArrayList<>();
 
+        // Filtramos la lista de cartas usando los filtros
         for (int i = 0; i < listaCartas.size(); i++) {
             if (filtros.get(listaCartas.get(i).getTipo()) == true){
                 this.listaCartas.add(listaCartas.get(i));
@@ -32,7 +35,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vista, parent, false);
             return new CartasViewHolder(view);
         }
-
+        // Vincula los datos de un objeto Carta con la vista correspondiente
         @Override
         public void onBindViewHolder(@NonNull CartasViewHolder holder, int position) {
             Cartas carta = listaCartas.get(position);
@@ -48,6 +51,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
 
 
         public static class CartasViewHolder extends RecyclerView.ViewHolder {
+            // Referencias a los elementos de la interfaz en vista.xml
             TextView nombreTextView, tipoTextView;
 
             public CartasViewHolder(@NonNull View itemView) {

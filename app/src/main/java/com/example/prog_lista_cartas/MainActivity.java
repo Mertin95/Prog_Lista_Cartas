@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
             listaCartas.add(new Cartas("Meowth", "Normal"));
             listaCartas.add(new Cartas("Rattata", "Normal"));
 
+            // si tenemos algun campo sin cubrir en el contnido saldra un mensaje en el Log informando del fallo
             }catch (NullPointerException | IllegalArgumentException e) {
             Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
             }

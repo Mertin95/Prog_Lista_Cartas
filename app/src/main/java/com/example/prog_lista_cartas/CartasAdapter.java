@@ -31,7 +31,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
 
         @NonNull
         @Override
-        public CartasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+         public CartasViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.vista, parent, false);
             return new CartasViewHolder(view);
         }

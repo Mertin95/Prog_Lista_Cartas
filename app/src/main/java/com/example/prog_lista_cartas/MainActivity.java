@@ -305,8 +305,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Tablayout
 
+        //Tablayout
         TabLayout tabLayout = findViewById(R.id.TabLayout);
         // Añadir pestañas
         tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));

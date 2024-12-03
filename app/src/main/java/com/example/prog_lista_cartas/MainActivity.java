@@ -1,26 +1,30 @@
 package com.example.prog_lista_cartas;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Switch;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -29,7 +33,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Cartas> listaCartas;
-    HashMap<String,Boolean> filtros;
+    HashMap<String, Boolean> filtros;
     private Switch listaagua;
     private Switch listaacero;
     private Switch listaelectrico;
@@ -61,8 +65,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"La lista se actualizo en 26/11/2024",Toast.LENGTH_LONG).show();
-
+                Snackbar.make(view, "La lista se actualizó el 26/11/2024", Snackbar.LENGTH_LONG).show();
             }
         };
 
@@ -98,19 +101,18 @@ public class MainActivity extends AppCompatActivity {
         boton10.setOnClickListener(listener);
 
 
-
         // diccionario de filtros
         filtros = new HashMap<>();
-        filtros.put("Eléctrico",false);
-        filtros.put("Fuego",false);
-        filtros.put("Planta",false);
-        filtros.put("Lucha",false);
-        filtros.put("Tierra",false);
-        filtros.put("Siniestro",false);
-        filtros.put("Psíquico",false);
-        filtros.put("Agua",false);
-        filtros.put("Acero",false);
-        filtros.put("Normal",false);
+        filtros.put("Eléctrico", false);
+        filtros.put("Fuego", false);
+        filtros.put("Planta", false);
+        filtros.put("Lucha", false);
+        filtros.put("Tierra", false);
+        filtros.put("Siniestro", false);
+        filtros.put("Psíquico", false);
+        filtros.put("Agua", false);
+        filtros.put("Acero", false);
+        filtros.put("Normal", false);
 
 
         //array donde se almacenan las cartas
@@ -187,11 +189,11 @@ public class MainActivity extends AppCompatActivity {
             listaCartas.add(new Cartas("Rattata", "Normal"));
 
             // si tenemos algun campo sin cubrir en el contnido saldra un mensaje en el Log informando del fallo
-            }catch (NullPointerException | IllegalArgumentException e) {
+        } catch (NullPointerException | IllegalArgumentException e) {
             Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
-            }
+        }
 
-        CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,this);
+        CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, this);
         recyclerView.setAdapter(adaptador);
 
         //switch , asociando los filtros de tipo de carta para que figure al pulsar el switch segun el tipo
@@ -199,8 +201,8 @@ public class MainActivity extends AppCompatActivity {
         listaagua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Agua",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Agua", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -210,8 +212,8 @@ public class MainActivity extends AppCompatActivity {
         listaacero.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Acero",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Acero", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -221,8 +223,8 @@ public class MainActivity extends AppCompatActivity {
         listaelectrico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Eléctrico",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Eléctrico", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -232,8 +234,8 @@ public class MainActivity extends AppCompatActivity {
         listafuego.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Fuego",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Fuego", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -243,8 +245,8 @@ public class MainActivity extends AppCompatActivity {
         listalucha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Lucha",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Lucha", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -254,8 +256,8 @@ public class MainActivity extends AppCompatActivity {
         listanormal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Normal",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Normal", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -265,8 +267,8 @@ public class MainActivity extends AppCompatActivity {
         listapsiquico.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Psíquico",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Psíquico", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -276,8 +278,8 @@ public class MainActivity extends AppCompatActivity {
         listasiniestro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Siniestro",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Siniestro", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -287,8 +289,8 @@ public class MainActivity extends AppCompatActivity {
         listatierra.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Tierra",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Tierra", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
@@ -298,20 +300,18 @@ public class MainActivity extends AppCompatActivity {
         listaplanta.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                filtros.put("Planta",b);
-                CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,MainActivity.this);
+                filtros.put("Planta", b);
+                CartasAdapter adaptador = new CartasAdapter(listaCartas, filtros, MainActivity.this);
                 recyclerView.setAdapter(adaptador);
 
             }
+
         });
 
 
         //Tablayout
         TabLayout tabLayout = findViewById(R.id.TabLayout);
         // Añadir pestañas
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
@@ -319,21 +319,77 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("TabLayout", "Tab seleccionada: " + tab.getText());
             }
+
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
             }
+
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
         });
 
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("POKEMETA");
+        setSupportActionBar(toolbar);
+        //habilitar el boton opciones
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        TextView textView1=(TextView)findViewById(R.id.textView);
+        //asociamos el textview al popup menu
+        registerForContextMenu(textView1);
+        //al pulsar
+        textView1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+              showPopUpMenu(view);
+            }
+        });
 
+    }
 
+    //Menu de opciones
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu1, menu);
+        return true;
+    }
 
+    // metodo de gestion de items del menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i;
+        if (item.getItemId() == R.id.item1) {
+            i = new Intent("android.intent.action.VIEW", Uri.parse("https://www.anipedia.net/gatos/"));
+            startActivity(i);
+        }
+        return true;
+    }
 
+    //Menu pop flotante mateniedo pulsado
+    // Método para asociar un menú emergente popup al pulsar el textView
+    public void showPopUpMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater menuInflater = popupMenu.getMenuInflater();
+        menuInflater.inflate(R.menu.acciones, popupMenu.getMenu());
+        // Manejador de clicks
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                TextView tv;
+                if (item.getItemId() == R.id.itemAmarillo) {
+                    tv = (TextView) view;
+                    tv.setTextColor(Color.YELLOW);
+                }
+                return true;
+            }
+        });
+        // mostrarlo
+        popupMenu.show();
 
     }
 }

@@ -14,4 +14,8 @@
     <string name="PLANTA">PLANTA</string>
     <string name="MOSTRAR">mostrar\n</string>
     <string name="mostrar">mostrar</string>
+    <string name="Tab1">Videos</string>
+    <string name="Tab2">Novedades</string>
+    <string name="Tab3">Rares</string>
+    <string name="item1">Añadir Carta</string>
 </resources>

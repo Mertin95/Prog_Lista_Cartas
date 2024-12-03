@@ -61,9 +61,8 @@
         android:id="@+id/listaacero"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toStartOf="@+id/Btacero"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:layout_editor_absoluteY="95dp" />
 
     <Switch
         android:id="@+id/listalucha"
@@ -85,23 +84,8 @@
         android:id="@+id/listaagua"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginTop="50dp"
         app:layout_constraintStart_toEndOf="@+id/Btagua"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="63dp"
-        android:text="@string/TITULO"
-        android:textColor="#B4190D"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="95dp" />
 
     <ImageButton
         android:id="@+id/Btsiniestro"
@@ -174,12 +158,11 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
         android:backgroundTint="#F8F7F5"
         android:scaleType="fitCenter"
         android:src="@drawable/agua"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:src="@drawable/agua"
         tools:srcCompat="@drawable/agua" />
 
@@ -244,9 +227,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="11dp"
         android:text="@string/AGUA"
         app:layout_constraintBottom_toTopOf="@+id/Btagua"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView3"
@@ -310,12 +295,12 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="44dp"
         android:text="@string/ACERO"
         app:layout_constraintBottom_toTopOf="@+id/Btacero"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView11"
@@ -343,45 +328,67 @@
         android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="40dp"
         android:layout_marginBottom="200dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/listaacero"
         app:layout_constraintStart_toEndOf="@+id/listaagua"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="288dp"
-        android:layout_height="112dp"
+        android:layout_width="313dp"
+        android:layout_height="105dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.072"
+        app:layout_constraintVertical_bias="0.526"
         app:srcCompat="@drawable/fondo_abajo" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/TabLayout"
-        android:layout_width="412dp"
+        android:layout_width="420dp"
         android:layout_height="45dp"
+        android:backgroundTint="?attr/colorTertiaryFixed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Tab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Monday" />
+            android:text="@string/Tab1" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Tab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tuesday" />
+            android:text="@string/Tab2" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/Tab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wednesday" />
+            android:text="@string/Tab3" />
     </com.google.android.material.tabs.TabLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="415dp"
+        android:layout_height="61dp"
+        android:background="?attr/colorTertiaryFixed"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="87dp"
+        android:layout_height="24dp"
+        android:text="Mas Fondos"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/TabLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

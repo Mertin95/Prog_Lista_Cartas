@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7de82"
+    android:backgroundTint="#f7de82"
+    tools:context=".MainActivity">
+
+    <Switch
+        android:id="@+id/listasiniestro"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toEndOf="@+id/Btacero"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Switch
+        android:id="@+id/listapsiquico"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="83dp"
+        app:layout_constraintStart_toEndOf="@+id/Btfuego"
+        app:layout_constraintTop_toBottomOf="@+id/listasiniestro" />
+
+    <Switch
+        android:id="@+id/listatierra"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/Bttierra"
+        app:layout_constraintStart_toEndOf="@+id/Btsiniestro"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Switch
+        android:id="@+id/listalucha"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintStart_toEndOf="@+id/Btlucha"
+        app:layout_constraintTop_toBottomOf="@+id/listaelectrico" />
+
+    <Switch
+        android:id="@+id/listaelectrico"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="82dp"
+        app:layout_constraintStart_toEndOf="@+id/Btelectrico"
+        app:layout_constraintTop_toBottomOf="@+id/listaagua" />
+
+    <Switch
+        android:id="@+id/listaagua"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toEndOf="@+id/Btagua"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="63dp"
+        android:text="@string/TITULO"
+        android:textColor="#B4190D"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/Btsiniestro"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#F8F5F5"
+        android:scaleType="fitCenter"
+        android:src="@drawable/siniestro"
+        app:layout_constraintStart_toEndOf="@+id/listasiniestro"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:src="@drawable/siniestro"
+        tools:srcCompat="@drawable/siniestro" />
+
+    <ImageButton
+        android:id="@+id/Btacero"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#F8F7F7"
+        android:scaleType="fitCenter"
+        android:src="@drawable/acero"
+        app:layout_constraintStart_toEndOf="@+id/listaacero"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:src="@drawable/acero"
+        tools:srcCompat="@drawable/acero" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:text="@string/FUEGO"
+        app:layout_constraintBottom_toTopOf="@+id/Btfuego"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/Btacero" />
+
+    <Switch
+        android:id="@+id/listaacero"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/Btacero"
+        app:layout_constraintStart_toEndOf="@+id/listaagua"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/ACERO"
+        app:layout_constraintBottom_toTopOf="@+id/Btacero"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Switch
+        android:id="@+id/listafuego"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/Btfuego"
+        app:layout_constraintStart_toEndOf="@+id/listaelectrico"
+        app:layout_constraintTop_toBottomOf="@+id/listaacero" />
+
+    <ImageButton
+        android:id="@+id/Btfuego"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#FAFAFA"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fuego"
+        app:layout_constraintStart_toEndOf="@+id/listafuego"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:src="@drawable/fuego"
+        tools:srcCompat="@drawable/fuego" />
+
+    <ImageButton
+        android:id="@+id/Btnormal"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#FAFAFA"
+        android:scaleType="fitCenter"
+        android:src="@drawable/normal"
+        app:layout_constraintStart_toEndOf="@+id/listanormal"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:src="@drawable/normal"
+        tools:srcCompat="@drawable/normal" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="131dp"
+        android:text="@string/NORMAL"
+        app:layout_constraintBottom_toTopOf="@+id/Btnormal"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/Btfuego" />
+
+    <Switch
+        android:id="@+id/listanormal"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintEnd_toStartOf="@+id/Btnormal"
+        app:layout_constraintStart_toEndOf="@+id/listalucha"
+        app:layout_constraintTop_toBottomOf="@+id/listafuego" />
+
+    <ImageButton
+        android:id="@+id/Btplanta"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#FBF9F9"
+        android:scaleType="fitCenter"
+        android:src="@drawable/planta"
+        app:layout_constraintStart_toEndOf="@+id/listaplanta"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:src="@drawable/planta"
+        tools:srcCompat="@drawable/planta" />
+
+    <Switch
+        android:id="@+id/listaplanta"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintEnd_toStartOf="@+id/Btplanta"
+        app:layout_constraintStart_toEndOf="@+id/Btnormal"
+        app:layout_constraintTop_toBottomOf="@+id/listapsiquico" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/PLANTA"
+        app:layout_constraintBottom_toTopOf="@+id/Btplanta"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/Btpsiquico" />
+
+    <ImageButton
+        android:id="@+id/Btagua"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#F8F7F5"
+        android:scaleType="fitCenter"
+        android:src="@drawable/agua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:src="@drawable/agua"
+        tools:srcCompat="@drawable/agua" />
+
+    <ImageButton
+        android:id="@+id/Btelectrico"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FAF9F6"
+        android:scaleType="fitCenter"
+        android:src="@drawable/electrico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btagua"
+        tools:src="@drawable/electrico"
+        tools:srcCompat="@drawable/electrico" />
+
+    <ImageButton
+        android:id="@+id/Btlucha"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FBFAFA"
+        android:scaleType="fitCenter"
+        android:src="@drawable/lucha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btelectrico"
+        tools:src="@drawable/lucha"
+        tools:srcCompat="@drawable/lucha" />
+
+    <ImageButton
+        android:id="@+id/Btpsiquico"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#FDFCFC"
+        android:scaleType="fitCenter"
+        android:src="@drawable/psiquico"
+        app:layout_constraintStart_toEndOf="@+id/listapsiquico"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:src="@drawable/psiquico"
+        tools:srcCompat="@drawable/psiquico" />
+
+    <ImageButton
+        android:id="@+id/Bttierra"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#FAFAFA"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tierra"
+        app:layout_constraintStart_toEndOf="@+id/listatierra"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:src="@drawable/tierra"
+        tools:srcCompat="@drawable/tierra" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="@string/AGUA"
+        app:layout_constraintBottom_toTopOf="@+id/Btagua"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:text="@string/ELECTRICO"
+        app:layout_constraintBottom_toTopOf="@+id/Btelectrico"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/LUCHA"
+        app:layout_constraintBottom_toTopOf="@+id/Btlucha"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:text="@string/PSIQUICO"
+        app:layout_constraintBottom_toTopOf="@+id/Btpsiquico"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/Btsiniestro" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/TIERRA"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/SINIESTRO"
+        app:layout_constraintBottom_toTopOf="@+id/Btsiniestro"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="61dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="192dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.469" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="202dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/Btpsiquico"
+        app:layout_constraintTop_toBottomOf="@+id/Bttierra"
+        app:srcCompat="@drawable/fondo_abajo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

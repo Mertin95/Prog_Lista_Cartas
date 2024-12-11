@@ -37,7 +37,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
         }
         // Vincula los datos de un objeto Carta con la vista correspondiente
         @Override
-        public void onBindViewHolder(@NonNull CartasViewHolder holder, int position) {
+        public void  onBindViewHolder(@NonNull CartasViewHolder holder, int position) {
             Cartas carta = listaCartas.get(position);
             holder.nombreTextView.setText(carta.getNombre());
             holder.tipoTextView.setText(carta.getTipo());

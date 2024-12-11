@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/raras"
+        android:title="Cart.Raras" />
+    <item
+        android:id="@+id/jugadas"
+        android:title="Jugadas" />
+    <item
+        android:id="@+id/compra"
+        android:title="Compra" />
+</menu>

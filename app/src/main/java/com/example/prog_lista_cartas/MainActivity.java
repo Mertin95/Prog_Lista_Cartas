@@ -27,6 +27,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Cartas> listaCartas;
+    private ArrayList<Cartas> listaRaras;
     HashMap<String,Boolean> filtros;
     private Switch listaagua;
     private Switch listaacero;
@@ -185,6 +186,26 @@ public class MainActivity extends AppCompatActivity {
             listaCartas.add(new Cartas("Rattata", "Normal"));
 
             // si tenemos algun campo sin cubrir en el contnido saldra un mensaje en el Log informando del fallo
+            }catch (NullPointerException | IllegalArgumentException e) {
+            Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
+            }
+
+        listaRaras = new ArrayList<>();
+        try {
+
+            listaCartas.add(new Cartas("Charizard", "Fuego"));
+            listaCartas.add(new Cartas("Gengar", "Fantasma"));
+            listaCartas.add(new Cartas("Dragonite", "Dragón"));
+            listaCartas.add(new Cartas("Alakazam", "Psíquico"));
+            listaCartas.add(new Cartas("Zapdos", "Eléctrico"));
+            listaCartas.add(new Cartas("Mewtwo", "Psíquico"));
+            listaCartas.add(new Cartas("Tyranitar", "Roca/Siniestro"));
+            listaCartas.add(new Cartas("Lucario", "Acero/Lucha"));
+            listaCartas.add(new Cartas("Gardevoir", "Psíquico/Hada"));
+            listaCartas.add(new Cartas("Metagross", "Acero/Psíquico"));
+
+
+
             }catch (NullPointerException | IllegalArgumentException e) {
             Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
             }

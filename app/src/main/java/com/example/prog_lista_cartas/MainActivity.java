@@ -2,6 +2,8 @@ package com.example.prog_lista_cartas;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +22,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -324,6 +328,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //traigo el menu y lo inflo
+        BottomNavigationView menus = findViewById(R.id.opciones);
+        menus.inflateMenu(R.menu.menu1);
 
 
 

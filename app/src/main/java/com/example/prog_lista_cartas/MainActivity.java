@@ -194,25 +194,6 @@ public class MainActivity extends AppCompatActivity {
             Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
             }
 
-        listaRaras = new ArrayList<>();
-        try {
-
-            listaCartas.add(new Cartas("Charizard", "Fuego"));
-            listaCartas.add(new Cartas("Gengar", "Fantasma"));
-            listaCartas.add(new Cartas("Dragonite", "Dragón"));
-            listaCartas.add(new Cartas("Alakazam", "Psíquico"));
-            listaCartas.add(new Cartas("Zapdos", "Eléctrico"));
-            listaCartas.add(new Cartas("Mewtwo", "Psíquico"));
-            listaCartas.add(new Cartas("Tyranitar", "Roca/Siniestro"));
-            listaCartas.add(new Cartas("Lucario", "Acero/Lucha"));
-            listaCartas.add(new Cartas("Gardevoir", "Psíquico/Hada"));
-            listaCartas.add(new Cartas("Metagross", "Acero/Psíquico"));
-
-
-
-            }catch (NullPointerException | IllegalArgumentException e) {
-            Log.e("Error", "Falta por cubrir un campo: " + e.getMessage());
-            }
 
         CartasAdapter adaptador = new CartasAdapter (listaCartas, filtros,this);
         recyclerView.setAdapter(adaptador);
@@ -332,7 +313,19 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView menus = findViewById(R.id.opciones);
         menus.inflateMenu(R.menu.menu1);
 
+        //Instancia del fragmento
 
+        Fragmento1 fragmento = new Fragmento1();
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("Objeto", listaCartas);
+        bundle.putSerializable("filtros", filtros);
+        fragmento.setArguments(bundle);
+
+        // Realiza la transacción para mostrar el fragmento
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragmento1, fragmento)
+                .commit();
 
 
 

@@ -371,4 +371,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.prog_lista_cartas.Fragmento1"
+        android:layout_width="413dp"
+        android:layout_height="833dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/opciones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

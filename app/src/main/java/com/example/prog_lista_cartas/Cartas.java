@@ -67,6 +67,7 @@ public class Cartas implements Parcelable {
             return new Cartas[size];
         }
     };
+
 }
 
 

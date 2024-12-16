@@ -1,4 +1,5 @@
 package com.example.prog_lista_cartas;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ public class CartasAdapter extends RecyclerView.Adapter<CartasAdapter.CartasView
         private HashMap<String,Boolean> filtros;
 
 
-    public CartasAdapter(ArrayList<Cartas> listaCartas, HashMap<String, Boolean> filtros, MainActivity mainActivity) {
+    public CartasAdapter(ArrayList<Cartas> listaCartas, HashMap<String, Boolean> filtros, Context context) {
         this.listaCartas = new ArrayList<>();
 
         // Filtramos la lista de cartas usando los filtros

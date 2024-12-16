@@ -3,10 +3,15 @@ package com.example.prog_lista_cartas;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainer;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +47,7 @@ public class Fragmento1 extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,16 +55,47 @@ public class Fragmento1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString("Objeto");
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//
+//
+//        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento1, container, false);
+
+//        ArrayList<Cartas> listaCartas2 = new ArrayList<>();
+//
+//        listaCartas2.add(new Cartas("Charizard EX", "Fuego"));
+//        listaCartas2.add(new Cartas("Blastoise GX", "Agua"));
+//        listaCartas2.add(new Cartas("Venusaur V", "Planta"));
+//        listaCartas2.add(new Cartas("Pikachu VMAX", "Eléctrico"));
+
+
+
+
+
+        View vista = inflater.inflate(R.layout.fragment_fragmento1, container, false);
+        // Recuperar el objeto desde los argumentos
+        if (getArguments() != null) {
+
+            ArrayList objeto = getArguments().getParcelableArrayList("Objeto");
+            HashMap<String, Boolean> filtros = (HashMap<String, Boolean>) getArguments().getSerializable("filtros");
+
+            if (objeto != null) {
+
+                RecyclerView rvObjetos = vista.findViewById(R.id.listarara);
+                rvObjetos.setAdapter(new CartasAdapter(objeto, filtros, vista.getContext()));
+
+            }
+
+          }
+        return vista;
+
     }
+
+
 }

@@ -4,8 +4,10 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainer;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,16 +69,6 @@ public class Fragmento1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-//        ArrayList<Cartas> listaCartas2 = new ArrayList<>();
-//
-//        listaCartas2.add(new Cartas("Charizard EX", "Fuego"));
-//        listaCartas2.add(new Cartas("Blastoise GX", "Agua"));
-//        listaCartas2.add(new Cartas("Venusaur V", "Planta"));
-//        listaCartas2.add(new Cartas("Pikachu VMAX", "Eléctrico"));
-
-
-
-
 
         View vista = inflater.inflate(R.layout.fragment_fragmento1, container, false);
         // Recuperar el objeto desde los argumentos
@@ -86,9 +78,15 @@ public class Fragmento1 extends Fragment {
             HashMap<String, Boolean> filtros = (HashMap<String, Boolean>) getArguments().getSerializable("filtros");
 
             if (objeto != null) {
+                Log.i("EJEMPLO", "antes de crear el adaptador");
 
                 RecyclerView rvObjetos = vista.findViewById(R.id.listarara);
-                rvObjetos.setAdapter(new CartasAdapter(objeto, filtros, vista.getContext()));
+
+                CartasAdapter adaptador = new CartasAdapter(objeto, filtros, vista.getContext());
+                rvObjetos.setAdapter(adaptador);
+                rvObjetos.setLayoutManager(new LinearLayoutManager(vista.getContext()));
+
+
 
             }
 

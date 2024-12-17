@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         // diccionario de filtros
         filtros = new HashMap<>();
-        filtros.put("Eléctrico",false);
+        filtros.put("Eléctrico",true);
         filtros.put("Fuego",false);
         filtros.put("Planta",false);
         filtros.put("Lucha",false);

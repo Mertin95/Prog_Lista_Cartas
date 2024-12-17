@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Instancia del fragmento
 
-        Fragmento1 fragmento = new Fragmento1();
+         Fragmento1 fragmento = new Fragmento1();
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("Objeto", listaCartas);
         bundle.putSerializable("filtros", filtros);
